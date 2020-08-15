@@ -1,0 +1,102 @@
+<head>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<%- include('menu/header', {bot, user, path}) %>
+    <div style="text-align: left;padding: 20px;" class="ust">
+      <br><br><br><br>
+      
+      
+                
+      <h3>
+        Profil Düzenle
+      </h3>
+      <br>
+      <h4>
+       Profilini güncelle veya düzenle.
+      </h4>
+      <br>
+      
+          </div>
+
+
+
+
+<div class="top">
+<div class="container is-fullhd " bgcolor="white">
+<br>
+ <form method="post">
+				
+   <div align="center" class="botekle" style="color:white; font-size:20px;">
+
+                     <!-- Username -->
+     <h5 style="text-align: left; color:black;">
+       Kullanıcı Adı
+     </h5>
+            <div class="input-group">
+              <input type="text" name="botid" id="botid" class="form-control" value="<%=user.username%>#<%=user.discriminator%>" disabled>
+              <div class="input-group-append" id="button-addon4" >
+              </div>
+            </div>    
+     <br>
+          <h5 style="text-align: left; color:black;">
+       Açıklama
+     </h5>
+     
+     		<div>
+              <div class="input-group">
+                	<% if(!bot.ayar.has(`user.${user.id}.site`)) { %>
+              <input type="text" name="bio" id="bio" class="form-control" placeholder="Herkese görünür profil açıklamanız. (140 Karakter en fazla)">
+                 <% } else { %>
+              <input type="text" name="bio" id="bio" class="form-control" value="<%=bot.ayar.fetch(`user.${user.id}.bio`)%>">
+                   <% } %>
+              <div class="input-group-append" id="button-addon4" >
+              </div>
+            </div>   
+     </div>
+     
+     
+             <br>                   <!-- Background -->
+            <h5 style="text-align: left; color:black;">
+       Arkaplan
+     </h5>
+     
+     
+            <div class="input-group">
+              	<% if(!bot.ayar.has(`user.${user.id}.resim`)) { %>
+              <input type="url" name="resim" id="resim" class="form-control" placeholder="Profilinizde arkada gözükecek olan gif beya jpeg görsel adresini giriniz." pattern="^http(s?)\:.*\.(?:jpe?g|gif|png)$">
+              <% } else { %>
+                            <input type="url" name="resim" id="resim" class="form-control" value="<%=bot.ayar.fetch(`user.${user.id}.resim`)%>" pattern="^http(s?)\:.*\.(?:jpe?g|gif|png)$">
+              <% } %>
+              <div class="input-group-append" id="button-addon4" >
+              </div>
+            </div>  
+     
+     
+     
+                <br>                     <!-- Website -->
+            <h5 style="text-align: left; color:black;">
+       Website
+     </h5>
+     
+            <div class="input-group">
+          <% if(!bot.ayar.has(`user.${user.id}.site`)) { %>
+              <input type="url" name="site" id="site" class="form-control" placeholder="Var ise site adresiniz.">
+                  <% } else { %>
+              <input type="url" name="site" id="site" class="form-control" value="<%=bot.ayar.fetch(`user.${user.id}.site`)%>">
+                <% } %>
+              <div class="input-group-append" id="button-addon4" >
+              </div>
+            </div> 
+      <br>
+             <button  type="submit" class="btn btn-primary">Düzenle<i aria-hidden='true'></i></button>
+				</div>
+   </div>
+			</form>
+		</div>
+<br>
+<%- include('menu/footer') %>

@@ -1,0 +1,142 @@
+<%- include('menu/header', {bot, user, path}) %>
+
+<head>
+  
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<div class="top">
+<div class="container is-fullhd " bgcolor="white">
+<br>
+  <br><br><br>
+ <form method="post">
+	<h3>
+    Bot Ekle
+   </h3>
+     <center><p style="color: red;">
+           Bir sorunmu var? Hemen Discord sunucumuza katıl ve yardım al. <a href="https://discord.gg/6Btez9">Katıl</a>
+          </p></center>			
+   
+   <div align="center" class="botekle" style="color:white; font-size:20px;">
+
+                <!-- ID -->
+            <div class="input-group">
+              <input type="text" name="botid" id="botid" class="form-control" placeholder="Bot ID">
+              <div class="input-group-append" id="button-addon4">
+              </div>
+            </div>
+<br>
+                     <!-- PREFIX -->
+            <div class="input-group">
+              <input type="text" name="botprefix" id="botprefix" class="form-control" placeholder="Bot Prefix">
+              <div class="input-group-append" id="button-addon4">
+              </div>
+            </div>
+     
+            <br>                 <!-- Kisa Aciklama -->
+            <div class="input-group">
+              <input type="text" name="kisa-aciklama" id="kisa-aciklama" class="form-control" placeholder="Kısa Açıklama">
+              <div class="input-group-append" id="button-addon4">
+              </div>
+            </div>
+     <br>
+                                       <!-- GitHub -->
+            <div class="input-group">
+              <input type="url" name="github" id="github" class="form-control" placeholder="Github URL (Veya Boş Bırakın)">
+              <div class="input-group-append" id="button-addon4">
+              </div>
+            </div>
+     <br>
+     
+                <div class="input-group mb-3">
+    <div class="input-group-prepend">
+     <span class="input-group-text" id="basic-addon3">https://discord.gg/</span>
+   </div>
+  <input type="text" name="botdestek" id="botdestek" class="form-control" placeholder="Destek Sunucusu URL (Veya Boş Bırakın)">
+ </div>
+     
+     <br>
+                                               <!-- Web Site -->
+            <div class="input-group">
+              <input type="url" name="botsite" id="botsite" class="form-control" placeholder="Web Site URL (Veya Boş Bırakın)">
+              <div class="input-group-append" id="button-addon4">
+              </div>
+            </div>
+     <br>
+       <!-- Kutuphane -->
+     
+          <br>
+    <div class="sec-style">
+     <select id="kutuphane" name="kutuphane" required="required">
+       <option disabled selected>Kitaplık seçiniz.</option>
+       <option value="discordcr" >discordcr</option>
+        
+          <option value="Nyxx" >Nyxx</option>
+        
+          <option value="Discord.Net" >Discord.Net</option>
+        
+          <option value="DSharpPlus" >DSharpPlus</option>
+        
+          <option value="Nostrum" >Nostrum</option>
+        
+          <option value="coxir" >coxir</option>
+        
+          <option value="DiscordGo" >DiscordGo</option>
+        
+          <option value="Discord4J" >Discord4J</option>
+        
+          <option value="Javacord" >Javacord</option>
+        
+          <option value="JDA" >JDA</option>
+        
+          <option value="discord.js" >discord.js</option>
+        
+          <option value="Eris" >Eris</option>
+        
+          <option value="Discordia" >Discordia</option>
+        
+          <option value="RestCord" >RestCord</option>
+        
+          <option value="Yasmin" >Yasmin</option>
+        
+          <option value="disco" >disco</option>
+        
+          <option value="discord.py" >discord.py</option>
+        
+          <option value="discordrb" >discordrb</option>
+        
+          <option value="serenity" >serenity</option>
+        
+          <option value="SwiftDiscord" >SwiftDiscord</option>
+        
+          <option value="Sword" >Sword</option>
+        
+        <option value="Other" >Other</option>
+     </select>
+     </div>
+
+	<br>
+                                     <!-- Uzun Açıklama -->
+		<div>
+      <textarea class="form-control" name="uzun-aciklama" id="uzun-aciklama"
+                placeholder="HTML veya en az 50 karakter olmak üzere açıklama" minlength="50" required="required"></textarea>
+     </div>
+     <br>
+
+
+     <center><p style="color: red;">
+              Botunuz bu sunucuya eklenecektir. <a href="https://discord.gg/eQCcmTm">Katıl</a>
+          </p></center>
+				<div style="width: 100%; text-align: center; margin-top: 20px;">
+					<button style="background-color:#00a1ff" type="submit" class="btn btn-primary">Botunu Ekle<i aria-hidden='true'></i></button>
+          <br>
+          <br>
+				</div>
+   </div>
+			</form>
+		</div>
+<% include ./menu/footer %>
+  
+</div>

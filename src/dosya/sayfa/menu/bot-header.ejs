@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Best Discord Bots</title>
+    
+  <!-- 
+  Copyright The Discord Bots  All Rights Reserved
+  THE FUNCTIONALITY AND DESIGN OF THIS WEBSITE AND ANY OF ITS ASSETS ARE NOT ALLOWED TO BE REUSED IN ANY WAY SHAPE OR FORM WITHOUT PROPER PERMISSION 
+  A copy of our license can be viewed here https://thediscordbots.xyz/license
+-->
+    
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="https://i.hizliresim.com/7apjdW.jpg">
+  <meta charset="UTF-8">
+  <meta property="og:title" content="<%=bot.ayar.fetch(`botlar.${id}.isim`)%> | Best Discord Bots" />
+	<meta property="og:image" value="<%=bot.ayar.fetch(`botlar.${id}.avatar`)%>">
+  <meta property="og:author" value="<%=bot.ayar.fetch(`botlar.${id}.sahip`)%>">
+	<meta property="og:site_name" value="Best Discord Bots">
+	<meta property="og:description" content="<%=bot.ayar.fetch(`botlar.${id}.kisaaciklama`)%>">
+    
+    <!--Css-->
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <meta name="copyrighted-site-verification" content="3015f3c56170df01" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+        <!--Css-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-135897792-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-135897792-2');
+</script>
+    
+  </head>
+  
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Best Discord Bots</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Ana Sayfa</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/bots">Botlar</a>
+      </li>
+            <li class="nav-item">
+        <a class="nav-link" href="/discord" target="_blank">Discord Sunucmuz</a>
+      </li>
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Diğer
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="https://docs.thediscordbots.xyz" target="_blank">API</a>
+          <a class="dropdown-item" href="/patreon" target="_blank">Patreon</a>
+          <a class="dropdown-item" href="/verification">Doğrulama İste</a>
+                        
+        </div>
+      </li>
+    </ul>
+                 <ul class="navbar-nav">
+<% if (!user) { %>
+          <li class="nav-item active"><a href="/giris" class="nav-link">Giriş</a></li>
+             <% } else { %>
+                           <li class="dropdown">
+            <a href="/" class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="https://cdn.discordapp.com/avatars/<%=user.id%>/<%=user.avatar%>.png?size=32" width="25" height="25" class="d-inline-block align-middle rounded-circle" alt=""><%=user.username%></a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                          <a class="dropdown-item" style="color: black;" href="/addbot">Bot Ekle</a>
+               <a class="dropdown-item" style="color: black;" href="/profile/<%=user.id%>">Profile</a>
+              <a class="dropdown-item" href="/cikis" style="color: black;"><i aria-hidden="true"></i>Çıkış Yap</a>
+
+          <div class="dropdown-divider"></div>
+                            <% if (bot.admin.includes(user.id) === true) { %>
+       <a class="dropdown-item" href="/admin-p" style="color: black;"><i aria-hidden="true"></i>Admin Panel</a>
+      <% } %>
+            
+                  <% if(bot.ayar.has(`yetkili.${user.id}.durum`) === true) { %>
+   <a class="dropdown-item" href="/yetkili" style="color: black;"><i aria-hidden="true"></i>Authoritative Panel</a>
+                        <% } %> 
+                              <% } %>      
+
+          
+          </ul>
+  </div>
+</nav>
+      

@@ -1,0 +1,22 @@
+<%- include('menu/header') %>
+
+  
+<center>
+  <br>
+  <br><br><br>
+         <img style="height: 50; width: 50;" src="<%=bot.ayar.fetch(`botlar.${id}.avatar`)%>" class="view-resim img-circle">
+
+ <h4>
+   <a style="font-size: 40px; color:black"><%=bot.useful.seg(bot.ayar.fetch(`botlar.${id}.isim`), 5)%></a></h4>
+    <p style="color: black; font-size: 20px">
+    <%=bot.useful.seg(bot.ayar.fetch(`botlar.${id}.isim`), 5)%> adlı bota oy veriyorsunuz.
+  </p>
+   <% if (!user) { %>
+      <a href="/giris">Botlara oy vermek için giriş yapmalısınız!</a>
+                    <% } else { %>
+        <a href="/bot/<%=id%>/oyver"><button id="oy" href="/vote/<%=id%>" class="button is-primary oyver" type="sumbit"><i aria-hidden="true"></i> Oy Ver</button></a>
+                      <% } %>
+
+  </center>
+    <%- include('menu/footer') %>
+  
